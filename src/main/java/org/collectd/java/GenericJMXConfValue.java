@@ -259,9 +259,8 @@ class GenericJMXConfValue
     values = genericListToNumber (objects);
     if (values == null)
     {
-      // TODO perhaps a loglevel option could be added so that these messages may be ignored
-      //GenericJMXLogger.logError ("GenericJMXConfValue: Cannot convert list of "
-          //+ "objects to numbers.");
+      GenericJMXLogger.logError ("GenericJMXConfValue: Cannot convert list of "
+          + "objects to numbers.");
       return;
     }
 
@@ -372,9 +371,8 @@ class GenericJMXConfValue
     }
     catch (Exception e)
     {
-      // TODO perhaps a loglevel option could be added so that these messages may be ignored
-      //GenericJMXLogger.logError ("GenericJMXConfValue.query: getAttribute failed: "
-          //+ e);
+      GenericJMXLogger.logError ("GenericJMXConfValue.query: getAttribute failed: "
+          + e);
       return (null);
     }
 
@@ -639,9 +637,8 @@ class GenericJMXConfValue
       v = queryAttribute (conn, objName, this._attributes.get (i));
       if (v == null)
       {
-        // TODO perhaps a loglevel option could be added so that these messages may be ignored
-        //GenericJMXLogger.logError ("GenericJMXConfValue.query: "
-            //+ "Querying attribute " + this._attributes.get (i) + " failed.");
+        GenericJMXLogger.logError ("GenericJMXConfValue.query: "
+            + "Querying attribute " + this._attributes.get (i) + " failed.");
         return;
       }
 
