@@ -98,6 +98,9 @@ public class GenericJMX implements CollectdConfigInterface,
               + "Evaluating `Connection' block failed: " + e);
         }
       }
+      else if (key.equalsIgnoreCase("DisableLogging")) {
+        GenericJMXLogger.disableLogging();
+      }
       else
       {
         GenericJMXLogger.logError ("GenericJMX plugin: Unknown config option: " + key);

@@ -4,28 +4,39 @@ import org.collectd.api.Collectd;
 
 public class GenericJMXLogger extends Collectd {
 
+  private static boolean loggingEnabled = true;
+
   public static void logError(String message)
   {
-    Collectd.logError(message);
+    if (loggingEnabled)
+      Collectd.logError(message);
   }
 
   public static void logWarning(String message)
   {
-    Collectd.logWarning(message);
+    if (loggingEnabled)
+      Collectd.logWarning(message);
   }
 
   public static void logNotice(String message)
   {
-    Collectd.logNotice(message);
+    if (loggingEnabled)
+      Collectd.logNotice(message);
   }
 
   public static void logInfo(String message)
   {
-    Collectd.logInfo(message);
+    if (loggingEnabled)
+      Collectd.logInfo(message);
   }
 
   public static void logDebug(String message)
   {
-    Collectd.logDebug(message);
+    if (loggingEnabled)
+      Collectd.logDebug(message);
+  }
+
+  public static void disableLogging() {
+   loggingEnabled = false;
   }
 }
